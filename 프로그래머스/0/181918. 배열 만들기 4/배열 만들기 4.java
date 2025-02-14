@@ -3,7 +3,6 @@ class Solution {
     public int[] solution(int[] arr) {
         Stack<Integer> skt = new Stack<>();
         int i=0;
-        
         while(i<arr.length)
         {
             if(skt.isEmpty())
@@ -19,7 +18,6 @@ class Solution {
                 skt.pop();
             }
         }
-
         return skt.stream().mapToInt(Integer::intValue).toArray();
     }
 }
