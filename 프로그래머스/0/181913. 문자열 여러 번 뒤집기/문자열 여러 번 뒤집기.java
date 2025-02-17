@@ -10,8 +10,7 @@ class Solution {
             for (char s : subStr.toCharArray()) temp.push(s);
             for(int i=query[0];i<=query[1];i++)
             {
-                answer.setCharAt(i,temp.peek());
-                temp.pop();
+                answer.setCharAt(i,temp.pop());
             }  
         }
         
