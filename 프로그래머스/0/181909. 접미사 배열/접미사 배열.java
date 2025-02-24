@@ -1,21 +1,15 @@
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
 
 class Solution {
+
     public String[] solution(String my_string) {
-        List<String> answer = new ArrayList<>();
-        List<Character> charlist = my_string.chars()
-                                            .mapToObj(c -> (char) c) 
-                                            .collect(Collectors.toList());
-        List<Character> uniqueList = new ArrayList<>(new HashSet<>(charlist));
-        
-        
-        for(char item: uniqueList)
-        for(int i=charlist.size()-1; i>=0; i--)
-        if(item==charlist.get(i))answer.add(my_string.substring(i));
-        
-        
-        Collections.sort(answer);
-        return answer.toArray(new String[0]);
+        String[] answer = new String[my_string.length()];
+
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = my_string.substring(i, my_string.length());
+        }
+
+        Arrays.sort(answer);
+        return answer;
     }
 }
